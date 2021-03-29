@@ -1,11 +1,13 @@
 const CustomError = require("../extensions/custom-error");
 
-module.exports = function countCats(backyard) {
-  let counter = 0;
-  let array = backyard.flat();
-  for (const obj of array) {
-    if (obj === '^^')
-      counter++;
-  }
-  return counter;
-}
+module.exports = function countCats(matrix) {
+  let count = 0;
+  for (var i = 0; i < matrix.length; i++) {
+    for (var j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === '^^') {
+        count +=1;
+      }
+    };
+  };
+  return count;
+};
